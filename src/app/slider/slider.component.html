@@ -1,0 +1,10 @@
+<div class="slider">
+    <div class="slides" [style.transform]="'translateX(' + (-currentSlide * 100) + '%)'">
+      <img *ngFor="let image of images" [src]="image" class="slide">
+    </div>
+    <div class="controls">
+      <button (click)="prevSlide()" class="prev" [disabled]="currentSlide === 0">&#10094;</button>
+      <button (click)="nextSlide()" class="next" [disabled]="isLastSlide()">&#10095;</button>
+    </div>
+  </div>
+  

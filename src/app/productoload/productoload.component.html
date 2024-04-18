@@ -1,0 +1,20 @@
+
+    <div class="form-group">
+      <label for="productName">Nombre del Producto:</label>
+      <input type="text" class="form-control" id="productName" name="productName" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="productDescription">Descripción:</label>
+      <textarea class="form-control" id="productDescription" name="productDescription" ngModel required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="productPrice">Precio:</label>
+      <input type="number" class="form-control" id="productPrice" name="productPrice" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="productImage">Imagen del Producto:</label>
+      <input type="file" class="form-control-file" id="productImage" name="productImage" (change)="onFileSelected($event)" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Cargar Producto</button>
+
+  
