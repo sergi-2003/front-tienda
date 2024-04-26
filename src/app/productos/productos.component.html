@@ -1,0 +1,15 @@
+<app-header></app-header>
+<section>
+    <div *ngFor="let product of products" class="product-card">
+        <img [src]="product.imagen" alt="{{ product.nombre }}">
+        <h3>{{ product.nombre }}</h3>
+        <p>{{ product.descripcion }}</p>
+        <p>Precio: {{ product.precio }}</p>
+        <button id="bottone1"><strong>Comprar</strong></button>
+
+      </div>
+      
+      <div *ngIf="products.length === 0" class="no-products">
+        <p>No hay productos disponibles.</p>
+      </div>
+</section>
