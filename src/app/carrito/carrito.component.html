@@ -1,0 +1,42 @@
+<!-- src/app/carrito/carrito.component.html -->
+<app-header></app-header>
+<div>
+  <h2>Carrito de Compras</h2>
+  <div *ngIf="products.length > 0; else carritoVacio">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td><img [src]="product.imagen" alt="Imagen del Producto"></td>
+          <td>{{ product.nombre }}</td>
+          <td>{{ product.descripcion }}</td>
+          <td>{{ product.precio | currency }}</td>
+          <td>
+            <button (click)="decrementQuantity(product)">-</button>
+            {{ product.cantidad }}
+            <button (click)="incrementQuantity(product)">+</button>
+          </td>
+          <td>{{ product.subtotal | currency }}</td>
+          <td><button (click)="removeFromCart(product)">Eliminar</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="total-price">
+      <h3>Total: {{ totalPrice | currency }}</h3>
+      <button type="button" (click)="pay()">Pagar</button>
+    </div>
+  </div>
+  <ng-template #carritoVacio>
+    <span>No hay productos en el carrito</span>
+  </ng-template>
+</div>

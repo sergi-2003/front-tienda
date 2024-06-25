@@ -10,7 +10,9 @@ header h1 {
   margin-top: -5%;
   font-style: oblique;
 }
-
+.contenerdoCarrito{
+ margin-left: 700px;
+}
 header p {
   font-size: 26px; /* Tamaño de fuente para el párrafo */
   margin-top: 5px; /* Espacio entre el párrafo y otros elementos */
@@ -18,10 +20,30 @@ header p {
   font-style: oblique;
   font-family: '';
 }
-
+.nameUsers{
+  margin-left: 70%;
+  margin-top: -20px;
+}
+.nameUsers button{
+  margin-left: 20px;
+  border: none;
+  background-color: #FCCB55;
+  width: 60px;
+  height: 30px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
 img{
     width: 100px;
     margin-right: 10%
+}
+
+.number{
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  text-decoration: none;
 }
 
 nav{
