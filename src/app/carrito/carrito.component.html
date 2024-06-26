@@ -1,42 +1,42 @@
 <!-- src/app/carrito/carrito.component.html -->
 <app-header></app-header>
-<div>
+<div class="carrito-container">
   <h2>Carrito de Compras</h2>
+
+  <!-- Verificación si hay productos -->
   <div *ngIf="products.length > 0; else carritoVacio">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Producto</th>
-          <th>Título</th>
-          <th>Descripción</th>
-          <th>Precio</th>
-          <th>Cantidad</th>
-          <th>Subtotal</th>
-          <th>Eliminar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let product of products">
-          <td><img [src]="product.imagen" alt="Imagen del Producto"></td>
-          <td>{{ product.nombre }}</td>
-          <td>{{ product.descripcion }}</td>
-          <td>{{ product.precio | currency }}</td>
-          <td>
-            <button (click)="decrementQuantity(product)">-</button>
+    <div class="productos">
+      <!-- Iteración sobre los productos -->
+      <div *ngFor="let product of products" class="producto">
+        <div class="product-info">
+          <img [src]="product.imagen" alt="Imagen del Producto">
+          <div class="details">
+            <p class="nombre">{{ product.nombre }}</p>
+            <p class="precio">{{ product.precio | currency }}</p>
+          </div>
+        </div>
+        <div class="actions">
+          <div class="quantity-controls">
+            <button class="quantity-button" (click)="decrementQuantity(product)">-</button>
             {{ product.cantidad }}
-            <button (click)="incrementQuantity(product)">+</button>
-          </td>
-          <td>{{ product.subtotal | currency }}</td>
-          <td><button (click)="removeFromCart(product)">Eliminar</button></td>
-        </tr>
-      </tbody>
-    </table>
+            <button class="quantity-button" (click)="incrementQuantity(product)">+</button>
+          </div>
+          <button class="remove-button" (click)="removeFromCart(product)">Eliminar</button>
+        </div>
+      </div>
+    </div>
     <div class="total-price">
       <h3>Total: {{ totalPrice | currency }}</h3>
-      <button type="button" (click)="pay()">Pagar</button>
+      <button class="pay-button" type="button" (click)="pay()">Pagar</button>
     </div>
   </div>
+
+  <!-- Template para carrito vacío -->
   <ng-template #carritoVacio>
-    <span>No hay productos en el carrito</span>
+    <div class="carrito-vacio">
+      <span>No hay productos en el carrito</span>
+    </div>
   </ng-template>
 </div>
+
+<app-footer></app-footer>

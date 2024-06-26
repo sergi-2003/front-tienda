@@ -1,30 +1,53 @@
-*{
-  font-style: oblique;
+/* Estilos base para todo el documento */
+* {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-header h1 {
-  font-size: 24px; /* Tamaño de fuente para el encabezado */
-  margin-bottom: 8px; /* Espacio entre el encabezado y el párrafo */
- text-align: center;
-  margin-top: -5%;
-  font-style: oblique;
-}
-.contenerdoCarrito{
- margin-left: 700px;
-}
-header p {
-  font-size: 26px; /* Tamaño de fuente para el párrafo */
-  margin-top: 5px; /* Espacio entre el párrafo y otros elementos */
+/* Estilos para el encabezado */
+header {
   text-align: center;
+  margin-top: 2%;
+  list-style: none;
+}
+
+.logo{
+  margin-left: -80%;
+  width: 100%;
+}
+
+li{
+  color: #FCCB55;
+}
+
+header h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
   font-style: oblique;
-  font-family: '';
+  margin-top: -5%;
 }
-.nameUsers{
-  margin-left: 70%;
+
+header li{
+  list-style: none;
+}
+
+header a{
+  list-style: none;
+}
+
+header p {
+  font-size: 26px;
+  margin-top: 5px;
+  font-style: oblique;
+}
+
+/* Estilos para la sección de usuario */
+.nameUsers {
+  margin-left: auto;
   margin-top: -20px;
+  text-align: right;
 }
-.nameUsers button{
+
+.nameUsers button {
   margin-left: 20px;
   border: none;
   background-color: #FCCB55;
@@ -34,63 +57,192 @@ header p {
   color: white;
   cursor: pointer;
 }
-img{
-    width: 100px;
-    margin-right: 10%
+
+.contenerdoCarrito{
+  margin-top: 2%;
 }
 
-.number{
+/* Estilos para imágenes */
+img {
+  width: 100px;
+  margin-right: 10%;
+  max-width: 100%; /* Imágenes responsivas */
+  height: auto; /* Evita distorsiones en la altura */
+}
+
+/* Estilos para la sección de números */
+.number {
   border-radius: 50%;
   height: 200px;
   width: 200px;
   text-decoration: none;
 }
 
-nav{
-  background-color: black;
+/* Estilos para la barra de navegación */
+nav {
+  background-color: #FCCB55;
   text-align: center;
   height: 50px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 1%;
 }
 
-li{
-margin-top: 15px;
-list-style-type: none;
-margin-left: 17%;
-text-align: center;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 20px; /* Ajuste del espaciado entre elementos */
 }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
+
+/* Estilos para la animación de texto */
+.animation-container {
+  width: 60%;
+  height: 50px;
+  position: relative;
+  margin: 2% auto;
+  overflow: hidden; /* Evita desbordamiento de contenido */
+}
+
+.animation-text {
+  position: absolute;
+  font-size: 20px;
+  white-space: nowrap; /* Evita que el texto se divida */
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Tablets*/
+@media (max-width: 850px) {
+  header h1 {
     font-size: 20px;
+    margin-top: 2%;
+  }
+
+  header{
+    list-style: none;
+    margin-top: 5%;
+  }
+
+  header p {
+    font-size: 32px;
+  }
+
+  .nameUsers {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .nameUsers button {
+    margin-left: 10px;
+    width: 50px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  nav {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    margin: 0%;
+    height: 50px;
+    margin-top: 2%;
+  }
+
+  nav a {
+ display: flex;
+ justify-content: space-between;
+ font-size: 30px;
+  }
+
+  .logo{
+    margin-left: 12%;
   }
 
   .animation-container {
-    width: 60%;
-    height: 50px;
-    position: relative;
-    margin-left: 40%;
-    margin-top: 2%;
+    width: 80%;
+    margin: 2% auto;
   }
-  
+
   .animation-text {
-    position: absolute;
-  
-    font-size: 35px;
-    animation: marquee 10s linear infinite;
+    font-size: 18px;
   }
-  
-  @keyframes marquee {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+
+  .contenerdoCarrito{
+    margin-top: 2%;
+    font-size: 20px;
   }
-  
+}
 
+/*-------------------------------*/
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 20px;
+  }
 
-  
+  header{
+    list-style: none;
+    margin-top: 5%;
+  }
+
+  header p {
+    font-size: 22px;
+  }
+
+  .nameUsers {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .nameUsers button {
+    margin-left: 10px;
+    width: 50px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  nav {
+    width: 100%;
+    height: auto;
+    list-style: none;
+    margin: 0%;
+    height: 50px;
+    margin-top: 5%;
+
+  }
+
+  nav a {
+ display: flex;
+ justify-content: space-between;
+ font-size: 15px;
+  }
+
+  .logo{
+    margin-left: 12%;
+  }
+
+  .animation-container {
+    width: 80%;
+    margin: 2% auto;
+  }
+
+  .animation-text {
+    font-size: 18px;
+  }
+
+  .contenerdoCarrito{
+    margin-top: 5%;
+    font-size: 20px;
+  }
+}

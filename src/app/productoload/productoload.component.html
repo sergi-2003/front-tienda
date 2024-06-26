@@ -31,12 +31,18 @@
         <div class="container">
           <label class="custom-file-upload">
             <input class="inputImg" type="file" (change)="onFileSelected($event)" accept="image/*" required>
-            Selecciona img del producto
+            Selecciona imagen del producto
           </label>
-          <img class="imgProducto" *ngIf="imagenSeleccionadaURL" [src]="imagenSeleccionadaURL" alt="Imagen seleccionada">
+          <div class="image-preview">
+            <img class="imgProducto" *ngIf="imagenSeleccionadaURL" [src]="imagenSeleccionadaURL" alt="Imagen seleccionada">
+          </div>
         </div>
-        <button type="submit" id="bottone1"><strong>Cargar Producto</strong></button>
-      </div>
-    </form>
+     
+      <button type="submit" id="bottone1"><strong>Cargar Producto</strong></button>
+    </div>
+  </form>
   </div>
 </section>
+
+
+<app-footer></app-footer>

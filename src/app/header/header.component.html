@@ -1,5 +1,5 @@
 <header>
-  <a [routerLink]="['/login']"><img src="../../assets/images/Logo Orenda (Dorado).png"></a>
+  <a class="logo" [routerLink]="['/login']"><img src="../../assets/images/Logo Orenda (Dorado).png"></a>
   <h1>Bienvenidos</h1>
   <p>"El Cambio Comienza en Ti"</p>
   <div class="nameUsers">
@@ -19,7 +19,7 @@
   <li><a [routerLink]="['']">Inicio</a></li>
   <li><a [routerLink]="['/Nosotros']">Nosotros</a></li>
   <li><a [routerLink]="['/productos']">Productos</a></li>
-  <li><a *ngIf="userName" [routerLink]="['/Categoria']">Categoria</a></li>
+  <li><a *ngIf="userName" [routerLink]="['/Categoria']">Cargar Producto</a></li>
 </nav>
 <div class="animation-container">
   <div class="animation-text">¡Envíos a todo Colombia!</div>

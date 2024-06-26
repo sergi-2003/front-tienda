@@ -6,7 +6,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { MenuFijoComponent } from './menu-fijo/menu-fijo.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
@@ -22,7 +21,6 @@ import { LoginComponent } from './login/login.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuFijoComponent,
     CategoriasComponent,
     PrincipalComponent,
     NosotrosComponent,
