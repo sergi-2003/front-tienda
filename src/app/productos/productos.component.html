@@ -3,12 +3,16 @@
   <div class="product-container">
     <div class="product-row" *ngFor="let row of productRows; let i = index">
       <div class="product-card" *ngFor="let product of row">
-        <img class="imgProducto" [src]="product.imagen" alt="{{ product.nombre }}">
-        <h3>{{ product.nombre }}</h3>
-        <p>{{ product.descripcion }}</p>
-        <p>Precio: {{ product.precio }}</p>
+        <img class="imgProducto" [src]="product.imagen" alt="{{ product.nombre }}"><br>
+        <div class="contenido">
+        <h3>{{ product.nombre }}</h3><br>
+        <p>{{ product.descripcion }}</p><br>
+        <p>Precio: {{ product.precio }}</p><br>
+      </div>
+        <div class="botones">
         <button (click)="addToCart(product)" id="bottone1"><strong>Comprar</strong></button>
-        <button (click)="eliminarProducto(i, product)" id="eliminarProductoBtn">Eliminar</button>
+        <button class="eliminar"  (click)="eliminarProducto(i, product)" id="eliminarProductoBtn">Eliminar</button>
+      </div>
       </div>
     </div>
   </div>

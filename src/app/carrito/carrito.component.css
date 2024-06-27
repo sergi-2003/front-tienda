@@ -38,10 +38,15 @@
 }
 
 .producto .product-info img {
-  max-width: 80px;
+  max-width: 100px;
   height: auto;
   border-radius: 4px;
   margin-right: 15px;
+}
+
+.product.imagen{
+  width: 250px;
+  max-width: 250px;
 }
 
 .producto .details {

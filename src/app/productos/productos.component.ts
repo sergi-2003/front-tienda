@@ -29,11 +29,16 @@ export class ProductosComponent implements OnInit {
   addToCart(product: any) {
     this.productService.addToCart(product);
     Swal.fire({
-      position: 'top-end',
+      position: 'center',
       icon: 'success',
       title: 'Producto agregado al carrito',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
+      background: '#e0ffe0',  // Fondo verde claro
+      iconColor: '#28a745',  // Color del icono verde
+      color: '#333',  // Color del texto
+      toast: true,
+      timerProgressBar: true
     });
   }
   
@@ -46,14 +51,23 @@ export class ProductosComponent implements OnInit {
 
     // Opcional: Mostrar una alerta o mensaje de éxito
     Swal.fire({
-      position: 'top-end',
+      position: 'center',
       icon: 'success',
       title: 'Producto eliminado',
+      text: 'El producto ha sido eliminado correctamente.',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
+      background: '#ffe0e0',  // Fondo rojo claro
+      iconColor: '#d9534f',  // Color del icono rojo
+      color: '#333',  // Color del texto
+      toast: true,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer);
+        toast.addEventListener('mouseleave', Swal.resumeTimer);
+      }
     });
   }
-  
   organizeProductsIntoRows(): void {
     const productsPerRow = 5;
     let rowIndex = 0;
