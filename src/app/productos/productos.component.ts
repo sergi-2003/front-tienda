@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service/service.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-productos',
@@ -26,11 +26,28 @@ export class ProductosComponent implements OnInit {
   }
 
   addToCart(product: any) {
-    this.productService.addToCart(product); // Pasa el producto seleccionado
+    this.productService.addToCart(product);
     Swal.fire({
       position: 'top-end',
       icon: 'success',
       title: 'Producto agregado al carrito',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
+  
+  eliminarProducto(rowIndex: number, product: any): void {
+    // Elimina el producto del arreglo products
+    this.products = this.products.filter(p => p !== product);
+    
+    // Vuelve a organizar los productos en filas
+    this.organizeProductsIntoRows();
+
+    // Opcional: Mostrar una alerta o mensaje de éxito
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Producto eliminado',
       showConfirmButton: false,
       timer: 1500
     });
