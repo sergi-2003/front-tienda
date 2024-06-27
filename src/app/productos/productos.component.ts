@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 export class ProductosComponent implements OnInit {
   products: any[] = [];
   productRows: any[] = [];
+  
 
   constructor(private productService: ServiceService) {}
 
