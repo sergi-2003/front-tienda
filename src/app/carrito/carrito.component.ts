@@ -1,3 +1,5 @@
+// src/app/carrito/carrito.component.ts
+
 import { Component } from '@angular/core';
 import { ServiceService } from '../service/service.service';
 
@@ -91,10 +93,17 @@ export class CarritoComponent {
         res => {
           console.log('Pago procesado en backend', res);
           // Redirigir al usuario a WhatsApp después de procesar el pago
-          window.location.href = 'https://wa.me/3004814669';
+          this.openWhatsApp(this.totalPrice);
         },
         err => console.error('Error al procesar el pago en backend', err)
       );
     });
+  }
+
+  openWhatsApp(totalPrice: number) {
+    const whatsappNumber = '3004814669';
+    const message = `Hola, quiero realizar una compra por un total de ${totalPrice} COP.`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   }
 }
